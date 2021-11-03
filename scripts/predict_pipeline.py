@@ -42,7 +42,7 @@ def online_prediction_pipeline(req_json, config_file=features_config, historical
     data_prepared = data_preparation_pipeline(req_df, config_file, historical, is_training=False)
     data_preprocessed, _ = data_preprocessing_pipeline(data_prepared, config_file)
     prediction, prediction_label = model_predict(model, data_preprocessed, labels = {0:'0 - NoFraude', 1:'1 - Fraude'}, th=0.1)
-    return {'prediction':prediction, 'predictionLabel':prediction_label, 'modelType': 'gb', 'predictionTime':round(time.time()-start_time,2), 'execTimestamp':exec_time}
+    return {'prediction':prediction, 'predictionLabel':prediction_label, 'modelType': 'GradientBoostingClassifier', 'predictionTime':round(time.time()-start_time,2), 'execTimestamp':exec_time}
 
 def model_predict(model, to_predict_data, labels, th=0.5):
     prediction = round((model.predict_proba(to_predict_data)).squeeze()[1],4)
