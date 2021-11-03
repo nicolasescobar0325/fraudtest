@@ -1,13 +1,13 @@
-# fraudtest
+# Fraud detection ML model pipeline
 Machine Learning model to predict fraud on Credit Card transactions dataset. The model was deployed with Flask on Google Cloud Platform as a docker build using the services Cloud Build and Cloud Run.
 
 To call the model, you can send a POST request to the predict endpoint with the input features as a JSON payload.
 
-# API params:
+## API params:
 host='https://cont-rappi-1-y3a2lw3urq-uc.a.run.app'
 endpoint='predict'
 
-# API call example (Python):
+## API call example (Python):
 You can make an API request using the following parameters (datailed example at api_call_sample.py).
 
 features = {'ID_USER': 62,
