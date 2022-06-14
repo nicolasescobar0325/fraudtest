@@ -25,6 +25,7 @@ with open(MODEL_CONFIG_FILE,'r') as f:
 app = Flask(__name__)
 api = Api(app)
 
+feature = 1
 
 model_features = model_config['modelFeatures']
 test_request = model_config['testRequest']['features']
